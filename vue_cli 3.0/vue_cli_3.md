@@ -44,7 +44,7 @@
 * 6、`? Use history mode for router?` 是否使用历史的路由模式（Y）
   ![](7.jpg "7.jpg")
 
-* 7、`? Pick a CSS pre-processor (PostCSS, Autoprefixer and CSS Modules are supported by default):` 选择CSS 预处理类型(Sass/SCSS)
+* 7、`? Pick a CSS pre-processor (PostCSS, Autoprefixer and CSS Modules are supported by default):` 选择CSS 预处理类型(Sass/SCSS)<br>
   ![](8.jpg "8.jpg")
 
 * 8、`? Pick a linter / formatter config:` 选择Linter/Formatter规范类型(TSLint)
