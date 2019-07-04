@@ -4,7 +4,6 @@
 * <pre>npm install -g @vue/cli</pre>
 ## 二、vue cli 3.0 的搭建步骤
 * 1、`vue create my_project`
- <br>
   shift+鼠标右击，打开cmd命令窗口
   <br>
   ![](1.jpg "1.jpg")
