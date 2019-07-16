@@ -92,3 +92,6 @@ const 定义常量，该常量不能赋值，但该常量的属性可以赋值;<
   </pre>
 
 ### var与let都是作用于作用域，let和const是es6的语法
+
+### 参考
+* [参考一](https://www.jb51.net/article/116491.htm)
