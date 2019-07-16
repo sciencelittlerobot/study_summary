@@ -18,3 +18,5 @@
 
 ## html5sorttable
 * [demo地址](https://github.com/farhadi/html5sortable)
+
+## 后期再来补充每个插件的使用效果，适用的地方
