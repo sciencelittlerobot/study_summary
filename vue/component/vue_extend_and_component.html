@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			{{someObject.a}}<br>
+			{{someObject.b}}<br><br>
+
+			<a href="javascript:void(0);" @click="clkAppend">追加extend</a>
+			
+			<div style="border: 1px solid #DDDDDD;">
+				hfhsdfhdsfhgsd
+				<cmp-testcomp></cmp-testcomp>
+			</div>
+
+			<div id="mount-point"></div>
+			
+			<p>============================</p>
+			
+			<apple></apple>
+			<apple></apple>
+		</div>
+		
+		<script src="lib/vue.min.js"></script>
+		<script>
+			var TestComp = Vue.extend({
+				data: function () {
+					return {
+						str: 'hahahahaha'
+					};
+				},
+				template: '<h1>{{str}}</h1>'
+			});
+//			var testHtml = new TestComp().$mount();
+
+			Vue.component('apple', TestComp);
+
+			var vue = new Vue({
+				el: '#app',
+				data: {
+					a: 1,
+					someObject: {}
+				},
+				components: {
+					'cmpTestcomp': TestComp
+				},
+				watch: {
+					someObject: function (newVal){
+//						console.log(JSON.stringify(newVal));
+					}
+				},
+				mounted: function () {
+					this.$set(this.someObject, 'b', 2);
+
+					this.someObject = Object.assign({}, this.someObject, { a: 1, b: 2 });
+					
+					var _this = this;
+					setTimeout(function () {
+						Vue.delete(_this.someObject, 'b');
+					}, 1000);
+				},
+				methods: {
+					clkAppend: function () {
+//						console.log(this.$el);
+//						console.log(testHtml.$el);
+//						this.$el.appendChild(testHtml.$el);
+//						document.getElementById('mount-point').appendChild(testHtml.$el);
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

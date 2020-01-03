@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			header{
+				color: #ABABAB;
+			}
+			footer{
+				color: #4057A5;
+			}
+			main{
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<base-layout @updatetpl="updateTpl">
+				<template v-slot:default="slotProps" >
+					<!--{{slotProps.user.firstName}}-->
+				</template>
+			</base-layout>
+			
+			<components :is="tpl"></components>
+		</div>
+
+		<script src="lib/vue.min.js"></script>
+		<script>
+			Vue.component('base-layout', {
+				data: function () {
+					return {
+						user: {
+							firstName: 'aaa',
+							lastName: 'bbb'
+						}
+					};
+				},
+			  	template: '<span><slot v-bind:user="user">{{user.lastName}}</slot><br><br><button @click="changeTpl">change template</button></span>',
+			  	methods: {
+			  		changeTpl: function () {
+			  			console.log('23232323');
+			  			this.$emit('updatetpl', {code: 'success'});
+			  			console.log('454545');
+			  		}
+			  	}
+			});
+			
+			var template1 = {
+				template: '<p>{{str}}</p>',
+				data: function () {
+					return {
+						str: 'hahahahhahah1'
+					};
+				}
+			};
+			
+			var template2 = {
+				template: '<p>{{str}}</p>',
+				data: function () {
+					return {
+						str: 'hahahahhahah2'
+					};
+				}
+			};
+
+			new Vue({
+				el: '#app',
+				data: {
+					tpl: template1
+				},
+				components: {
+					'template1': template1,
+					'template2': template2
+				},
+				methods: {
+					updateTpl: function (data) {
+						console.log('121212');
+						console.log(data);
+						this.tpl = 'template2';
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

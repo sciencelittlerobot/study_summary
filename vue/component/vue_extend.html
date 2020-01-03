@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="appOne"></div>
+		<div id="appOne"></div>
+		<div id="appOne"></div>
+		<!--<div id="appTwo"></div>-->
+
+		<script src="lib/vue.min.js"></script>
+		<script>
+			var AppObj = Vue.extend({
+				data () {
+					return {
+						userName: {
+							firstName: 'Zhang',
+							lastName: 'Tom'
+						},
+						isShow: false
+					};
+				},
+				template: '<div><button @click="showName">显示userName</button><p v-show="isShow===true">{{userName.lastName}} {{userName.firstName}}</p></div>',
+				methods: {
+					showName () {
+						this.isShow = !this.isShow;
+					}
+				}
+			});
+
+			new AppObj().$mount('#appOne');
+			new AppObj().$mount('#appOne');
+//			new AppObj().$mount('#appOne');
+			
+//			new AppObj().$mount('#appTwo');
+//			new AppObj().$mount('#appTwo');
+//			new AppObj().$mount('#appTwo');
+		</script>
+	</body>
+</html>
