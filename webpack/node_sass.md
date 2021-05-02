@@ -43,6 +43,15 @@ Run `npm rebuild node-sass` to download the binding for your current environment
 npm rebuild node-sass
 ```
 
+## 三、问题3
+* 1、场景
+在进行npm install时出现关于node-sass的报错
+```
+gyp ERR! stack Error: `C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe` failed with exit code: 1
+```
+* 2、解决办法
+参考了一些方法，更新了.Net Framework 4.5.2,下载了Python 2.7并设置了系统环境变量，但是都没有起效，也执行了npm install --global node-gyp和npm install --glpbal --production windows-build-tools，问题仍然存在，后面通过升级node-sass版本为4.12.0，并将node环境的版本升级为对应的12.X版本的，问题菜解决。结论：node-sass升级的时候需要注意当前运行的node环境版本。
+
 三、参考资料：
 * 参考一：[https://github.com/sass/node-sass/releases](https://github.com/sass/node-sass/releases)
 * 参考一：[https://www.cnblogs.com/milo-wjh/p/9175138.html](https://www.cnblogs.com/milo-wjh/p/9175138.html)
