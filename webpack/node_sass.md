@@ -54,4 +54,5 @@ gyp ERR! stack Error: `C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe
 
 三、参考资料：
 * 参考一：[https://github.com/sass/node-sass/releases](https://github.com/sass/node-sass/releases)
-* 参考一：[https://www.cnblogs.com/milo-wjh/p/9175138.html](https://www.cnblogs.com/milo-wjh/p/9175138.html)
+* 参考二：[https://www.cnblogs.com/milo-wjh/p/9175138.html](https://www.cnblogs.com/milo-wjh/p/9175138.html)
+* 参考三：[https://blog.csdn.net/salamiiii/article/details/79905608](https://blog.csdn.net/salamiiii/article/details/79905608)
